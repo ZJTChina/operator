@@ -7,9 +7,23 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
+#include <string>
+#include "classtime.h"
+
 using namespace std;
 
-int main() {
+int main()
+{
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	classtime t1(1,50);
+	classtime t2(2,50);
+
+	t1.show();
+	t1+t2;
+	t1.show();
+
+
 	return 0;
+
 }
