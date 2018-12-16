@@ -35,13 +35,37 @@ void classtime::SetTime(int & val1 , int val2)
 	hour = val2;
 }
 
-void classtime::operator+(classtime & val)
+classtime classtime::operator+(const classtime & val) const
 {
 	classtime temp;
 	temp.min = this->min + val.min;
 	temp.hour = this->hour + val.hour;
-	this->hour = temp.hour + temp.min/60;
-	this->min = temp.min % 60;
+	return temp;
+}
+
+classtime  classtime::operator-( const classtime & val) const
+{
+	classtime temp;
+
+	temp.min = this->min - val.min;
+	temp.hour = this->hour - val.hour;
+	return temp;
+}
+
+
+classtime  classtime::operator*( const double & val) const
+{
+	classtime temp;
+
+	temp.min = this->min * val;
+	temp.hour = this->hour * val;
+	return temp;
+}
+
+void Init(classtime & val1 , int Minval , int hourval)
+{
+	val1.min = Minval;
+	val1.hour = hourval;
 }
 
 void classtime::show(void)

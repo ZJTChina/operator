@@ -16,14 +16,19 @@ using namespace std;
 int main()
 {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	classtime t1(1,50);
-	classtime t2(2,50);
+	classtime t1(50,4);
+	classtime t2(50,2);
 
-	t1.show();
-	t1+t2;
-	t1.show();
+	(t1+t2).show();
+	(t1-t2).show();
+	(t1*10).show();
+    Init(t1,0,0);
+    t1.show();
 
 
 	return 0;
 
 }
+
+
+

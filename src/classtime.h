@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdio.h>
 
 class classtime {
 private:
@@ -22,9 +23,11 @@ public:
 		void addmin(int & val);
 		void addhou(int & val);
 		void SetTime(int & val1 , int val2);
-		//void Sum(classtime & val);
-		void operator+(classtime & val);
-		void show(void);
+		classtime  operator+( const classtime & val) const;
+		classtime  operator-( const classtime & val) const;
+		classtime  operator*( const double & val) const;
+		friend void Init(classtime & val1 , int Minval , int hourval);
+ 		void show(void);
 		~classtime();
 };
 
